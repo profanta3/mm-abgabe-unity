@@ -8,13 +8,8 @@ public class Camera_Script : MonoBehaviour
     public float cameraDistance = 5f;
     public float cameraHight = 2f;
     public float motionSpeed = 0.5f;
-    // Start is called before the first frame update
 
     float timeCount = 0.0f;
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
