@@ -1,2 +1,3 @@
 # mm-abgabe-unity
-asd
+
+*Unity Projekt zu den Vorlesungsbegleitenden Aufgaben*
