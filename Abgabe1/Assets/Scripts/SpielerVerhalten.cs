@@ -6,21 +6,19 @@ using UnityEngine.UI;
 
 public class SpielerVerhalten : MonoBehaviour
 {
+    //Movement
     public float movementSpeed = 8f;
-    private int score = 0;
-    CharacterController charCtrl;
-    private float xMove;
-    private float zMove;
-    public Text text;
     public float drehGeschwindigkeit = 10f;
     public Transform cameraPosition;
+
+    private float xMove;
+    private float zMove;
+
+    //UI
+    public Text text;
+    private int score = 0;
+
     
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -29,7 +27,6 @@ public class SpielerVerhalten : MonoBehaviour
 
         float winkel = xMove * drehGeschwindigkeit * Time.deltaTime;
         Vector3 targetDirection = new Vector3(Mathf.Sin(winkel), 0f, Mathf.Cos(winkel));
-        Debug.Log("Winkel: " + Convert.ToString(winkel));
         
         transform.rotation = Quaternion.LookRotation(targetDirection) * transform.rotation;
 
@@ -42,12 +39,8 @@ public class SpielerVerhalten : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             score++;
-            Debug.Log("Score: " + score);
+            //Debug.Log("Score: " + score);
             text.text = Convert.ToString(score);
-        }
-        else
-        {
-            return;
         }
     }
 }
